@@ -1,6 +1,22 @@
 import streamlit as st
+import graphviz
 
-st.set_page_config(page_title="My Dashboard", layout="wide")
+st.title("Optimal Combinations")
 
-st.title("Streamlit Dashboard")
-st.write("This app is running from GitHub using Streamlit Cloud!")
+st.markdown("### Zaco (Fwd), Pamo (Mid), Raco (Mid)")
+
+# Create a directed graph
+dot = graphviz.Digraph()
+
+# Add nodes
+dot.node("Z", "Zaco (Fwd)")
+dot.node("P", "Pamo (Mid)")
+dot.node("R", "Raco (Mid)")
+
+# Add edges
+dot.edge("P", "Z")
+dot.edge("R", "Z")
+dot.edge("P", "R")
+
+# Display in Streamlit
+st.graphviz_chart(dot)
