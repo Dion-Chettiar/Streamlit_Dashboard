@@ -1,23 +1,17 @@
 import streamlit as st
 
-
-
 st.title("Optimal Combinations")
 
-st.markdown("### Zaco (Fwd), Pamo (Mid), Raco (Mid)")
+graph_code = """
+digraph G {
+    P [label="Pamo (Mid)"]
+    R [label="Raco (Mid)"]
+    Z [label="Zaco (Fwd)"]
 
-# Create a directed graph
-dot = graphviz.Digraph()
+    P -> Z
+    R -> Z
+    P -> R
+}
+"""
 
-# Add nodes
-dot.node("Z", "Zaco (Fwd)")
-dot.node("P", "Pamo (Mid)")
-dot.node("R", "Raco (Mid)")
-
-# Add edges
-dot.edge("P", "Z")
-dot.edge("R", "Z")
-dot.edge("P", "R")
-
-# Display in Streamlit
-st.graphviz_chart(dot)
+st.graphviz_chart(graph_code)
