@@ -1,6 +1,13 @@
 import streamlit as st
 import graphviz
 
+try:
+    import graphviz
+    st.success("Graphviz imported successfully!")
+except ModuleNotFoundError as e:
+    st.error(f"Graphviz not found: {e}")
+
+
 st.title("Optimal Combinations")
 
 st.markdown("### Zaco (Fwd), Pamo (Mid), Raco (Mid)")
