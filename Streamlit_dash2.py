@@ -42,8 +42,8 @@ def load_data():
     """Load and process CSV data files using pandas"""
     try:
         # Method 1: Direct relative path (recommended for GitHub deployment)
-        perf_data = pd.read_csv("perf_Drop.csv")
-        sub_data = pd.read_csv("sub_op.csv")
+        perf_data = pd.read_csv("Performance_Dropoff_Per_Player.csv")
+        sub_data = pd.read_csv("sub_optimizer 2.csv")
         
         # Alternative Method 2: Using pathlib for cross-platform compatibility
         # base_path = Path(__file__).parent
